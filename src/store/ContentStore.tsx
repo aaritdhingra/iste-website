@@ -1,4 +1,4 @@
-﻿import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import { USERS, AUTH_KEY, ATTEMPT_KEY, SESSION_HOURS, MAX_ATTEMPTS, LOCKOUT_MINUTES } from "../lib/adminConfig";
 
 const STORAGE_KEY = "iste_site_content_v6";

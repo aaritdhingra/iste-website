@@ -91,7 +91,7 @@ export default function Admin() {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginBottom: 40, flexWrap: "wrap", gap: 20 }}>
           <div>
             <div style={{ fontFamily: "JetBrains Mono, monospace", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--red-deep)", marginBottom: 12, fontWeight: 700 }}>
-              Secure Dashboard · {String(userRole).replace("_", " ").toUpperCase()}
+              Secure Dashboard &bull; {String(userRole).replace("_", " ").toUpperCase()}
             </div>
             <h1 className="h-display" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>Content Manager</h1>
           </div>

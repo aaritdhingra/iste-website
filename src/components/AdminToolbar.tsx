@@ -23,7 +23,7 @@ export default function AdminToolbar() {
     }}>
       <span style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "JetBrains Mono, monospace", fontSize: 10 }}>
         <span style={{ width: 8, height: 8, borderRadius: 999, background: editMode || onPortal ? "#4ade80" : "var(--red-soft)" }} />
-        Admin · {minsLeft}m left
+        Admin &bull; {minsLeft}m left
       </span>
 
       {!onPortal && (

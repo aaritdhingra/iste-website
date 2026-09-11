@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import Reveal from "../components/Reveal";
 import { useContent } from "../store/ContentStore";
 import { Users, LinkedIn } from "../components/Icons";
@@ -53,7 +53,7 @@ export default function Members() {
                   color: filter === c ? "var(--cream)" : "var(--ink-2)",
                   border: `1px solid ${filter === c ? "var(--ink)" : "var(--line)"}`, transition: "all 0.3s",
                 }}>
-                {c} Â· {c === "All" ? content.members.length : content.members.filter(m => m.category === c).length}
+                {c} &bull; {c === "All" ? content.members.length : content.members.filter(m => m.category === c).length}
               </button>
             ))}
           </div>

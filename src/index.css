@@ -1,4 +1,4 @@
-﻿*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --cream: #FAF6EF; --cream-2: #F3EDE0; --cream-3: #ECE3D0;
   --ink: #1A1613; --ink-2: #3D342D; --ink-3: #6B5D52; --ink-4: #A89A8C;
@@ -601,3 +601,16 @@ a:hover img.hoverable,
   }
 }
 
+
+/* Safe separator dot - avoids Unicode encoding issues */
+.text-dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background: var(--red-deep);
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}

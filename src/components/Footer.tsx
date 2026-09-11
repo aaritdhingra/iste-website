@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useContent } from "../store/ContentStore";
 import { ArrowUpRight } from "./Icons";
 
@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="font-serif" style={{ fontSize: "clamp(40px, 8vw, 100px)", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: 1, marginBottom: 40 }}>ISTE<span style={{ color: "var(--red)" }}>.</span></div>
         
         <div style={{ borderTop: "1px solid rgba(250,246,239,0.15)", paddingTop: 32, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 20 }}>
-          <div style={{ fontSize: 12, opacity: 0.5 }} className="font-mono">Â© {new Date().getFullYear()} ISTE STUDENT CHAPTER Â· {content.site.university.toUpperCase()}</div>
+          <div style={{ fontSize: 12, opacity: 0.5 }} className="font-mono">© {new Date().getFullYear()} ISTE STUDENT CHAPTER &bull; {content.site.university.toUpperCase()}</div>
         </div>
       </div>
       <style>{`@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr !important; } }`}</style>

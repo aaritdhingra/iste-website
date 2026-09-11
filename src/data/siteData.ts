@@ -1,4 +1,4 @@
-﻿export const SITE = {
+export const SITE = {
   short: "ISTE",
   full: "Indian Society for Technical Education",
   chapter: "Student Chapter",

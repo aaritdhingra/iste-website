@@ -28,7 +28,7 @@ export default function Projects() {
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 60, alignItems: "start" }} className="proj-detail">
                 <div style={{ position: "sticky", top: 120 }}>
                   <div className="font-mono" style={{ fontSize: 12, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-4)", marginBottom: 24 }}>
-                    Project · 0{i+1} / 0{PROJECTS.length}
+                    Project &bull; 0{i+1} / 0{PROJECTS.length}
                   </div>
                   <h2 className="h-display" style={{ fontSize: "clamp(48px, 7vw, 96px)", marginBottom: 24 }}>
                     {p.title}
@@ -36,7 +36,7 @@ export default function Projects() {
                   <div style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap", marginBottom: 32 }}>
                     <span className="font-mono" style={{ fontSize: 11, padding: "6px 14px", background: "var(--red-mist)", color: "var(--red-deep)", borderRadius: 999, letterSpacing: "0.1em", textTransform: "uppercase" }}>{p.type}</span>
                     <span className="font-mono" style={{ fontSize: 11, color: "var(--ink-3)", display: "flex", alignItems: "center", gap: 6 }}><Check width={12} height={12} /> {p.status}</span>
-                    <span className="font-mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>· {p.year}</span>
+                    <span className="font-mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>&bull; {p.year}</span>
                   </div>
                   <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--ink-2)", marginBottom: 32 }}>{p.desc}</p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 32 }}>

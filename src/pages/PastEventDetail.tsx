@@ -1,4 +1,4 @@
-﻿import { useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useContent } from "../store/ContentStore";
 import { RichText } from "../components/RichText";

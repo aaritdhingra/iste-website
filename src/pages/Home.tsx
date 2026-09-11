@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useRef, useState, useMemo } from "react";
 import { ArrowUpRight, ArrowDown, Spark, Users, Calendar } from "../components/Icons";
 import Reveal, { Magnetic, TiltCard, TextReveal } from "../components/Reveal";
@@ -198,7 +198,7 @@ export default function Home() {
                       fontFamily="JetBrains Mono, monospace"
                     >
                       <textPath href="#ring" startOffset="0%">
-                        ISTE Â· CUSC Â· ISTE Â· CUSC Â·
+                        ISTE &bull; CUSC &bull; ISTE &bull; CUSC &bull;
                       </textPath>
                     </text>
                   </svg>
@@ -309,7 +309,7 @@ export default function Home() {
             >
               <div className="font-mono" style={{ fontSize: 11, color: "var(--ink-3)", letterSpacing: "0.15em", textTransform: "uppercase", display: "flex", alignItems: "center", gap: 10, fontWeight: 600 }}>
                 <span style={{ width: 7, height: 7, borderRadius: 999, background: "var(--red)" }} />
-                Official portal Â· {content.site.university}
+                Official portal &bull; {content.site.university}
               </div>
               <div className="font-mono" style={{ fontSize: 11, color: "var(--ink-3)", letterSpacing: "0.15em", textTransform: "uppercase", display: "flex", alignItems: "center", gap: 8, fontWeight: 600 }}>
                 Scroll <ArrowDown width={13} height={13} />
@@ -388,7 +388,7 @@ export default function Home() {
               <div style={{ display: "flex", flexDirection: "column", gap: 36 }}>
                 <div>
                   <div className="font-mono" style={{ fontSize: 11, color: "var(--red-deep)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 14, fontWeight: 800 }}>
-                    01 Â· Who We Are
+                    01 &bull; Who We Are
                   </div>
                   <EditableText
                     path="site.overview"
@@ -401,7 +401,7 @@ export default function Home() {
                 <div style={{ height: 1, background: "var(--line)" }} />
                 <div>
                   <div className="font-mono" style={{ fontSize: 11, color: "var(--red-deep)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 14, fontWeight: 800 }}>
-                    02 Â· What We Do
+                    02 &bull; What We Do
                   </div>
                   <EditableText
                     path="site.overview2"

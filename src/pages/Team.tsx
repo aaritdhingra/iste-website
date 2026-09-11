@@ -1,4 +1,4 @@
-﻿import Reveal from "../components/Reveal";
+import Reveal from "../components/Reveal";
 import { TEAM } from "../data/siteData";
 import { LinkedIn, ArrowUpRight } from "../components/Icons";
 
