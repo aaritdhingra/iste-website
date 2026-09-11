@@ -1,4 +1,4 @@
-export const SITE = {
+﻿export const SITE = {
   short: "ISTE",
   full: "Indian Society for Technical Education",
   chapter: "Student Chapter",
@@ -68,16 +68,10 @@ export const ACHIEVEMENTS = [
   {
     year: "2026",
     items: [
-      {
-        title: "Best Professional Society Award",
-        desc: "Presented to the Indian Society for Technical Education (ISTE) in recognition of academic excellence, tech innovation, and leadership."
-      },
-      {
-        title: "Change Maker Award",
-        desc: "Recognized for engineering and technology education leadership at Chandigarh University."
-      }
-    ]
-  }
+      { title: "Best Professional Society Award", desc: "Presented to the Indian Society for Technical Education (ISTE) in recognition of academic excellence, tech innovation, and leadership." },
+      { title: "Change Maker Award", desc: "Recognized for engineering and technology education leadership at Chandigarh University." },
+    ],
+  },
 ];
 
 export const NAV = [
@@ -87,31 +81,13 @@ export const NAV = [
   { to: "/past-events", label: "Previous Events" },
   { to: "/recruitment", label: "Recruitment" },
 ];
-export type GalleryItem = {
-  src: string;
-  alt: string;
-  cat: string;
-};
-
-export const GALLERY: GalleryItem[] = [
-  {
-    src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=85",
-    alt: "ISTE Event",
-    cat: "Events",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=85",
-    alt: "Technical Workshop",
-    cat: "Workshops",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=85",
-    alt: "Technology",
-    cat: "Technology",
-  },
+export const GALLERY = [
+  { src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=85", alt: "ISTE Event", cat: "Events" },
+  { src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=85", alt: "Technical Workshop", cat: "Workshops" },
+  { src: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=85", alt: "Technology", cat: "Technology" },
 ];
 
-export type ProjectItem = {
+type Project = {
   id: string;
   title: string;
   type: string;
@@ -125,19 +101,41 @@ export type ProjectItem = {
   team: string;
 };
 
-export const PROJECTS: ProjectItem[] = [];
-
-export type TeamGroup = {
-  cat: string;
-  people: {
-    name: string;
-    role: string;
-    dept: string;
-    bio: string;
-    image: string;
-  }[];
+export const PROJECTS: Project[] = [
+  {
+    id: "project-1",
+    title: "Coming Soon",
+    type: "ISTE Project",
+    status: "In Development",
+    year: "2026",
+    desc: "Innovative projects and initiatives by ISTE CUSC.",
+    tech: ["Web", "Technology"],
+    image: "/logo.jpg",
+    problem: "Project details will be announced soon.",
+    solution: "More information coming soon.",
+    team: "ISTE CUSC"
+  }
+];
+type TeamMember = {
+  name: string;
+  role: string;
+  image?: string;
+  dept?: string;
+  bio?: string;
+  linkedin?: string;
 };
 
-export const TEAM: TeamGroup[] = [];
+type TeamGroup = {
+  cat: string;
+  people: TeamMember[];
+};
+
+export const TEAM: TeamGroup[] = [
+  {
+    cat: "Core Team",
+    people: []
+  }
+];
+
 
 

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+﻿import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function Cursor() {
@@ -6,23 +6,30 @@ export default function Cursor() {
   const loc = useLocation();
 
   useEffect(() => {
-    if (loc.pathname.startsWith("/admin")) return;
+    const isAdmin = loc.pathname.startsWith("/iste-ops-x7k9m2");
+    if (isAdmin) {
+      document.body.style.cursor = "auto";
+      return;
+    }
+
+    document.body.style.cursor = "none";
 
     const move = (e: MouseEvent) => {
-      if (!dotRef.current) return;
-
-      dotRef.current.style.left = `${e.clientX}px`;
-      dotRef.current.style.top = `${e.clientY}px`;
+      if (dotRef.current) {
+        dotRef.current.style.transform =
+          `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+      }
     };
 
     window.addEventListener("mousemove", move);
 
     return () => {
       window.removeEventListener("mousemove", move);
+      document.body.style.cursor = "auto";
     };
   }, [loc.pathname]);
 
-  if (loc.pathname.startsWith("/admin")) return null;
+  if (loc.pathname.startsWith("/iste-ops-x7k9m2")) return null;
 
-  return <div ref={dotRef} className="cursor-dot" aria-hidden="true" />;
+  return <div ref={dotRef} className="cursor" />;
 }

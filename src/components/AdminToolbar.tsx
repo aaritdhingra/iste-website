@@ -4,12 +4,12 @@ import { useContent } from "../store/ContentStore";
 import { ADMIN_PATH } from "../lib/adminConfig";
 
 export default function AdminToolbar() {
-  const { isAdmin, editMode, setEditMode, logout, exportJSON, importJSON, hasChanges, saveChanges, discardChanges, sessionExpiresIn } = useContent();
+  const { userRole, editMode, setEditMode, logout, exportJSON, importJSON, hasChanges, saveChanges, discardChanges, sessionExpiresIn } = useContent();
   const inputRef = useRef<HTMLInputElement>(null);
   const nav = useNavigate();
   const loc = useLocation();
 
-  if (!isAdmin) return null;
+  if (!userRole) return null;
 
   const minsLeft = Math.max(0, Math.floor(sessionExpiresIn / 60000));
   const onPortal = loc.pathname === ADMIN_PATH;
@@ -23,7 +23,7 @@ export default function AdminToolbar() {
     }}>
       <span style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "JetBrains Mono, monospace", fontSize: 10 }}>
         <span style={{ width: 8, height: 8, borderRadius: 999, background: editMode || onPortal ? "#4ade80" : "var(--red-soft)" }} />
-        Admin &bull; {minsLeft}m left
+        Admin · {minsLeft}m left
       </span>
 
       {!onPortal && (

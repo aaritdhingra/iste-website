@@ -33,7 +33,7 @@ export default function About() {
                 </div>
               ))}
               <div style={{ position: "absolute", bottom: 40, left: 40, right: 40, color: "var(--cream)", zIndex: 10, pointerEvents: "none" }}>
-                <div className="font-mono" style={{ fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", opacity: 0.85, marginBottom: 12, fontWeight: 700 }}>Innovation &bull; Excellence &bull; Community</div>
+                <div className="font-mono" style={{ fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", opacity: 0.85, marginBottom: 12, fontWeight: 700 }}>Innovation · Excellence · Community</div>
                 <h2 className="h-display" style={{ fontSize: "clamp(32px, 5vw, 68px)" }}>Building tomorrow, today.</h2>
               </div>
               <div style={{ position: "absolute", bottom: 30, right: 30, display: "flex", gap: 8, zIndex: 11 }}>

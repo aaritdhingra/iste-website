@@ -31,13 +31,13 @@ export default function Navbar() {
         <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
           <div className="font-mono" style={{ fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", display: "flex", alignItems: "center", gap: 10 }}>
             <span style={{ width: 6, height: 6, borderRadius: 999, background: "var(--red)", animation: "pulse 2s infinite" }} />
-            Official portal &bull; ISTE Student Chapter
+            Official portal · ISTE Student Chapter
           </div>
           <div style={{ display: "flex", gap: 20, alignItems: "center" }} className="hide-mobile">
             <a href={`mailto:${content.site.email}`} className="hoverable link-underline" style={{ opacity: 0.85 }}>Email</a>
-            <span style={{ opacity: 0.3 }}>&bull;</span>
+            <span style={{ opacity: 0.3 }}>·</span>
             <a href={content.site.instagram} target="_blank" rel="noreferrer" className="hoverable link-underline" style={{ opacity: 0.85 }}>Instagram</a>
-            <span style={{ opacity: 0.3 }}>&bull;</span>
+            <span style={{ opacity: 0.3 }}>·</span>
             <a href={content.site.linkedin} target="_blank" rel="noreferrer" className="hoverable link-underline" style={{ opacity: 0.85 }}>LinkedIn</a>
           </div>
         </div>
@@ -50,8 +50,10 @@ export default function Navbar() {
               <div style={{ position: "absolute", inset: -6, background: "var(--red)", borderRadius: 999, opacity: 0.15, filter: "blur(12px)" }} />
               <img src={content.logo} alt="ISTE" style={{ width: 78, height: 78, borderRadius: 999, objectFit: "cover", border: "3px solid var(--ink)", position: "relative", boxShadow: "0 8px 24px -8px rgba(26,22,19,0.25)" }} />
             </div>
-            <div><div style={{ marginBottom: 2 }}>
+            <div>
+              <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginBottom: 2 }}>
                 <div className="font-serif" style={{ fontSize: 34, fontWeight: 600, letterSpacing: "-0.02em", color: "var(--ink)", lineHeight: 1 }}>ISTE</div>
+                <div style={{ padding: "3px 10px", background: "var(--red)", color: "var(--cream)", fontSize: 9, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase", borderRadius: 999, fontFamily: "JetBrains Mono, monospace" }}>Est. Chapter</div>
               </div>
               <div style={{ fontSize: 13, color: "var(--ink-2)", fontWeight: 500 }}>
                 <span style={{ color: "var(--red-deep)", fontWeight: 700 }}>Chandigarh</span> University
@@ -103,5 +105,3 @@ export default function Navbar() {
     </>
   );
 }
-
-

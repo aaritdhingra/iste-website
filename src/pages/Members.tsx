@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import { useContent } from "../store/ContentStore";
 import { Users, LinkedIn } from "../components/Icons";
@@ -22,7 +23,7 @@ export default function Members() {
           <Reveal delay={200}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, marginTop: 60 }} className="members-intro">
               <p style={{ fontSize: 20, lineHeight: 1.65, color: "var(--ink-2)", maxWidth: 560 }}>
-                Engineers, designers, organizers and mentors â€” different disciplines united by one conviction: build things that matter.
+                Engineers, designers, organizers and mentors — different disciplines united by one conviction: build things that matter.
               </p>
               <div style={{ display: "flex", gap: 30, alignItems: "center", justifyContent: "flex-end" }}>
                 <div>
@@ -53,7 +54,7 @@ export default function Members() {
                   color: filter === c ? "var(--cream)" : "var(--ink-2)",
                   border: `1px solid ${filter === c ? "var(--ink)" : "var(--line)"}`, transition: "all 0.3s",
                 }}>
-                {c} &bull; {c === "All" ? content.members.length : content.members.filter(m => m.category === c).length}
+                {c} · {c === "All" ? content.members.length : content.members.filter(m => m.category === c).length}
               </button>
             ))}
           </div>
@@ -121,9 +122,9 @@ export default function Members() {
             <p style={{ fontSize: 18, opacity: 0.8, maxWidth: 560, margin: "0 auto 40px", lineHeight: 1.6 }}>
               Recruitment opens every academic year across all our wings.
             </p>
-            <a href="/recruitment" className="btn btn-red hoverable" style={{ padding: "20px 40px", fontSize: 15 }}>
+            <Link to="/recruitment" className="btn btn-red hoverable" style={{ padding: "20px 40px", fontSize: 15 }}>
               Apply for Membership <Users width={16} height={16} />
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>
@@ -140,4 +141,3 @@ export default function Members() {
     </div>
   );
 }
-

@@ -2,6 +2,7 @@ import { useState, useEffect, type CSSProperties } from "react";
 import { useContent } from "../store/ContentStore";
 import { ImageEditor } from "../components/ImageEditor";
 import { USERS } from "../lib/adminConfig";
+import RecruitmentAdmin from "./RecruitmentAdmin";
 
 const inputStyle: CSSProperties = { width: "100%", padding: "14px 16px", background: "var(--cream-2)", border: "1px solid var(--line)", borderRadius: 12, fontSize: 15, color: "var(--ink)", outline: "none", fontFamily: "inherit" };
 const labelStyle: CSSProperties = { fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-3)", fontFamily: "JetBrains Mono, monospace", fontWeight: 700, marginBottom: 8, display: "block" };
@@ -45,11 +46,11 @@ export default function Admin() {
   const [showPasswords, setShowPasswords] = useState(false);
 
   const tabsByRole: Record<string, string[]> = {
-    admin: ["general", "events", "past", "members", "images", "links", "access"],
+    admin: ["general", "events", "past", "members", "recruitment", "images", "links", "access"],
     event_manager: ["events", "past"],
     media_manager: ["images"],
     content_writer: ["past"],
-    hr_manager: ["members"],
+    hr_manager: ["members", "recruitment"],
     webmaster: ["general", "links"],
   };
 
@@ -91,7 +92,7 @@ export default function Admin() {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginBottom: 40, flexWrap: "wrap", gap: 20 }}>
           <div>
             <div style={{ fontFamily: "JetBrains Mono, monospace", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--red-deep)", marginBottom: 12, fontWeight: 700 }}>
-              Secure Dashboard &bull; {String(userRole).replace("_", " ").toUpperCase()}
+              Secure Dashboard · {String(userRole).replace("_", " ").toUpperCase()}
             </div>
             <h1 className="h-display" style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>Content Manager</h1>
           </div>
@@ -243,6 +244,11 @@ export default function Admin() {
               </div>
             ))}
           </div>
+        )}
+
+        {/* ========== RECRUITMENT ========== */}
+        {tab === "recruitment" && (
+          <RecruitmentAdmin />
         )}
 
         {/* ========== IMAGES ========== */}

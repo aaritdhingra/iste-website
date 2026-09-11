@@ -1,3 +1,4 @@
+
 export function RichText({ content, className }: { content: string; className?: string }) {
   const parseMarkup = (text: string) => {
     if (!text) return "";

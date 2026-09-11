@@ -72,7 +72,7 @@ export default function Home() {
                 <TextReveal text="Build, lead, and innovate" delay={80} />
                 <br className="hide-mobile" />
                 <TextReveal text=" with the " delay={200} />
-                <span className="magic-text pro-hover" style={{ fontStyle: "italic", color: "var(--red-deep)" }}>
+                <span className="magic-text" style={{ fontStyle: "italic", color: "var(--red-deep)" }}>
                   ISTE Student Chapter
                 </span>
                 <span style={{ color: "var(--red)" }}>.</span>
@@ -143,7 +143,7 @@ export default function Home() {
               </Reveal>
             </div>
 
-            {/* RIGHT â€” LAYERED BENTO (Spinning Ring PEECHe) */}
+            {/* RIGHT — LAYERED BENTO (Spinning Ring PEECHe) */}
             <Reveal delay={280}>
               <div 
                 className="hero-right-container" 
@@ -181,7 +181,7 @@ export default function Home() {
                     width: "38%",
                     minWidth: 120,
                     aspectRatio: "1/1",
-                    zIndex: 1, // â† PEECHE GAYA
+                    zIndex: 1, // ← PEECHE GAYA
                     animation: "spin 20s linear infinite",
                     pointerEvents: "none",
                   }}
@@ -198,13 +198,13 @@ export default function Home() {
                       fontFamily="JetBrains Mono, monospace"
                     >
                       <textPath href="#ring" startOffset="0%">
-                        ISTE &bull; CUSC &bull; ISTE &bull; CUSC &bull;
+                        ISTE · CUSC · ISTE · CUSC ·
                       </textPath>
                     </text>
                   </svg>
                 </div>
 
-                {/* Main Photo */}
+                {/* 2. Main Photo - AAGE AAYA (zIndex: 2) */}
                 <div
                   style={{
                     position: "absolute",
@@ -216,7 +216,7 @@ export default function Home() {
                     overflow: "hidden",
                     border: "3px solid var(--cream)",
                     boxShadow: "0 28px 56px -20px rgba(0,0,0,0.25)",
-                    zIndex: 2, // â† AAGE AAYA
+                    zIndex: 2, // ← AAGE AAYA
                   }}
                 >
                   <EditableImage
@@ -301,7 +301,7 @@ export default function Home() {
                 paddingTop: 28,
                 borderTop: "1px solid var(--line)",
                 display: "flex",
-                justifyContent: 'space-between',
+                justifyContent: "space-between",
                 alignItems: "center",
                 flexWrap: "wrap",
                 gap: 16,
@@ -309,7 +309,7 @@ export default function Home() {
             >
               <div className="font-mono" style={{ fontSize: 11, color: "var(--ink-3)", letterSpacing: "0.15em", textTransform: "uppercase", display: "flex", alignItems: "center", gap: 10, fontWeight: 600 }}>
                 <span style={{ width: 7, height: 7, borderRadius: 999, background: "var(--red)" }} />
-                Official portal &bull; {content.site.university}
+                Official portal · {content.site.university}
               </div>
               <div className="font-mono" style={{ fontSize: 11, color: "var(--ink-3)", letterSpacing: "0.15em", textTransform: "uppercase", display: "flex", alignItems: "center", gap: 8, fontWeight: 600 }}>
                 Scroll <ArrowDown width={13} height={13} />
@@ -355,7 +355,7 @@ export default function Home() {
             <div className="eyebrow" style={{ marginBottom: 24 }}>Chapter Overview</div>
             <h2 className="h-display" style={{ fontSize: "clamp(40px, 6vw, 88px)", marginBottom: 64, maxWidth: 1000, lineHeight: 1.08 }}>
               A community built to{" "}
-              <span className="magic-text pro-hover" style={{ fontStyle: "italic", color: "var(--red-deep)" }}>
+              <span className="magic-text" style={{ fontStyle: "italic", color: "var(--red-deep)" }}>
                 inspire
               </span>{" "}
               and redefine engineering.
@@ -388,7 +388,7 @@ export default function Home() {
               <div style={{ display: "flex", flexDirection: "column", gap: 36 }}>
                 <div>
                   <div className="font-mono" style={{ fontSize: 11, color: "var(--red-deep)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 14, fontWeight: 800 }}>
-                    01 &bull; Who We Are
+                    01 · Who We Are
                   </div>
                   <EditableText
                     path="site.overview"
@@ -401,7 +401,7 @@ export default function Home() {
                 <div style={{ height: 1, background: "var(--line)" }} />
                 <div>
                   <div className="font-mono" style={{ fontSize: 11, color: "var(--red-deep)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 14, fontWeight: 800 }}>
-                    02 &bull; What We Do
+                    02 · What We Do
                   </div>
                   <EditableText
                     path="site.overview2"
@@ -423,7 +423,7 @@ export default function Home() {
           <Reveal>
             <div className="eyebrow" style={{ marginBottom: 24, justifyContent: "center", display: "inline-flex" }}>Join the movement</div>
             <h2 className="h-display" style={{ fontSize: "clamp(40px, 7vw, 96px)", marginBottom: 28 }}>
-              Ready to <span className="magic-text pro-hover" style={{ fontStyle: "italic", color: "var(--red-deep)" }}>build?</span>
+              Ready to <span className="magic-text" style={{ fontStyle: "italic", color: "var(--red-deep)" }}>build?</span>
             </h2>
             <p style={{ fontSize: 17, color: "var(--ink-2)", maxWidth: 520, margin: "0 auto 36px", lineHeight: 1.6 }}>
               Become part of a community shaping the future of technology at {content.site.university}.
@@ -453,8 +453,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-
-

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import { TEAM } from "../data/siteData";
 import { LinkedIn, ArrowUpRight } from "../components/Icons";
@@ -65,7 +66,7 @@ export default function Team() {
           <Reveal>
             <h3 className="h-display" style={{ fontSize: "clamp(36px, 5vw, 64px)", marginBottom: 24 }}>Want to be on this page?</h3>
             <p style={{ fontSize: 16, color: "var(--ink-2)", maxWidth: 480, margin: "0 auto 32px" }}>Recruitment opens every academic year across all six domains.</p>
-            <a href="/contact" className="btn btn-ink hoverable">Apply now <ArrowUpRight width={16} height={16} /></a>
+            <Link to="/recruitment" className="btn btn-ink hoverable">Apply now <ArrowUpRight width={16} height={16} /></Link>
           </Reveal>
         </div>
       </section>

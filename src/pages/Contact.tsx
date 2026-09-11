@@ -99,28 +99,28 @@ export default function Contact() {
                 ) : (
                   <form onSubmit={submit} style={{ display: "flex", flexDirection: "column", gap: 24 }}>
                     <div>
-                      <div className="font-mono" style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-3)", marginBottom: 8 }}>01 &bull; Your name</div>
+                      <div className="font-mono" style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-3)", marginBottom: 8 }}>01 · Your name</div>
                       <input required value={form.name} onChange={e => setForm({...form, name: e.target.value})} placeholder="Ada Lovelace"
                         style={{ width: "100%", padding: "12px 0", background: "transparent", border: "none", borderBottom: "1px solid var(--line)", fontSize: 20, fontFamily: "Fraunces, serif", color: "var(--ink)", outline: "none", transition: "border-color 0.3s" }}
                         onFocus={(e) => e.currentTarget.style.borderColor = "var(--red)"}
                         onBlur={(e) => e.currentTarget.style.borderColor = "var(--line)"} />
                     </div>
                     <div>
-                      <div className="font-mono" style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-3)", marginBottom: 8 }}>02 &bull; Email</div>
+                      <div className="font-mono" style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-3)", marginBottom: 8 }}>02 · Email</div>
                       <input required type="email" value={form.email} onChange={e => setForm({...form, email: e.target.value})} placeholder="ada@example.com"
                         style={{ width: "100%", padding: "12px 0", background: "transparent", border: "none", borderBottom: "1px solid var(--line)", fontSize: 20, fontFamily: "Fraunces, serif", color: "var(--ink)", outline: "none", transition: "border-color 0.3s" }}
                         onFocus={(e) => e.currentTarget.style.borderColor = "var(--red)"}
                         onBlur={(e) => e.currentTarget.style.borderColor = "var(--line)"} />
                     </div>
                     <div>
-                      <div className="font-mono" style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-3)", marginBottom: 8 }}>03 &bull; Subject</div>
+                      <div className="font-mono" style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-3)", marginBottom: 8 }}>03 · Subject</div>
                       <input required value={form.subject} onChange={e => setForm({...form, subject: e.target.value})} placeholder="What's this about?"
                         style={{ width: "100%", padding: "12px 0", background: "transparent", border: "none", borderBottom: "1px solid var(--line)", fontSize: 20, fontFamily: "Fraunces, serif", color: "var(--ink)", outline: "none", transition: "border-color 0.3s" }}
                         onFocus={(e) => e.currentTarget.style.borderColor = "var(--red)"}
                         onBlur={(e) => e.currentTarget.style.borderColor = "var(--line)"} />
                     </div>
                     <div>
-                      <div className="font-mono" style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-3)", marginBottom: 8 }}>04 &bull; Message</div>
+                      <div className="font-mono" style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink-3)", marginBottom: 8 }}>04 · Message</div>
                       <textarea required rows={5} value={form.message} onChange={e => setForm({...form, message: e.target.value})} placeholder="Tell us everything…"
                         style={{ width: "100%", padding: "12px 0", background: "transparent", border: "none", borderBottom: "1px solid var(--line)", fontSize: 18, fontFamily: "Inter, sans-serif", color: "var(--ink)", outline: "none", resize: "none", transition: "border-color 0.3s", lineHeight: 1.6 }}
                         onFocus={(e) => e.currentTarget.style.borderColor = "var(--red)"}

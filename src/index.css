@@ -23,7 +23,9 @@ body[data-admin="true"], body[data-admin="true"] * { cursor: auto !important; }
 body[data-admin="true"] a, body[data-admin="true"] button, body[data-admin="true"] [role="button"] { cursor: pointer !important; }
 body[data-admin="true"] input, body[data-admin="true"] textarea { cursor: text !important; }
 
-
+.cursor { position: fixed; top: 0; left: 0; width: 10px; height: 10px; background: var(--red); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s; box-shadow: 0 0 10px rgba(232,117,107,0.5); }
+.cursor-ring { position: fixed; top: 0; left: 0; width: 44px; height: 44px; border: 1.5px solid var(--red-soft); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: transform 0.1s ease-out, width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, background 0.3s; }
+.cursor-ring.hover { width: 80px; height: 80px; border-color: transparent; background: rgba(232,117,107,0.15); backdrop-filter: blur(2px); }
 
 @media (max-width: 900px) { body { cursor: auto; font-size: 16px; } html { font-size: 16px; } button, a { cursor: pointer; } .cursor, .cursor-ring { display: none; } }
 
@@ -75,7 +77,8 @@ body[data-admin="true"] input, body[data-admin="true"] textarea { cursor: text !
 .marquee-wrapper { display: flex; width: max-content; animation: marquee 30s linear infinite; }
 .marquee-wrapper:hover { animation-play-state: paused; }
 
-
+.magic-text { display: inline-block; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.magic-text:hover { color: var(--red-deep); transform: scale(1.05) rotate(-2deg); text-shadow: 3px 3px 0px var(--red-mist); font-style: italic; cursor: pointer; }
 
 .hide-mobile { display: block; }
 .show-mobile { display: none; }
@@ -88,529 +91,322 @@ body[data-admin="true"] input, body[data-admin="true"] textarea { cursor: text !
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
-/* =========================================================
-   PROFESSIONAL CUSTOM CURSOR
-   ========================================================= */
+/* ============================================================
+   RECRUITMENT EXPERIENCE
+   ============================================================ */
+.recruitment-page { background: var(--cream); }
+.recruitment-hero { padding-bottom: 90px; }
+.recruitment-title { font-size: clamp(58px, 9vw, 126px); line-height: .95; max-width: 1050px; margin: 28px 0 34px; letter-spacing: -.045em; }
+.recruitment-title em { color: var(--red-deep); font-style: italic; }
+.recruitment-intro { max-width: 650px; color: var(--ink-2); font-size: 18px; line-height: 1.7; }
+.recruitment-meta { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line); font: 700 10px "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .14em; color: var(--ink-3); }
+.recruitment-meta span { display: inline-flex; align-items: center; gap: 9px; }
+.recruitment-meta i { width: 7px; height: 7px; border-radius: 50%; background: var(--red); display: inline-block; }
+.recruitment-layout { display: grid; grid-template-columns: .65fr 1.35fr; gap: 60px; align-items: start; }
+.recruitment-side { position: sticky; top: 130px; padding: 34px 0; }
+.side-number { font: 800 11px "JetBrains Mono", monospace; color: var(--red-deep); letter-spacing: .15em; margin-bottom: 24px; }
+.recruitment-side h2 { font-size: 44px; line-height: 1; margin-bottom: 14px; }
+.recruitment-side > p { color: var(--ink-3); max-width: 330px; font-size: 14px; }
+.role-stack { margin-top: 34px; display: grid; gap: 7px; }
+.role-chip { width: 100%; display: grid; grid-template-columns: 30px 1fr auto; gap: 10px; align-items: center; padding: 15px 14px; text-align: left; border: 1px solid var(--line); border-radius: 14px; background: transparent; transition: transform .35s cubic-bezier(.16,1,.3,1), background .3s, border-color .3s; cursor: pointer !important; }
+.role-chip span { font: 700 9px "JetBrains Mono", monospace; color: var(--ink-4); }
+.role-chip strong { font-size: 13px; }
+.role-chip:hover { transform: translateX(6px); border-color: var(--red-soft); background: var(--red-mist); }
+.role-chip.selected { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.role-chip.selected span { color: var(--red-soft); }
+.recruitment-form { background: var(--cream); border: 1px solid var(--line); border-radius: 30px; padding: clamp(24px, 4vw, 46px); box-shadow: 0 35px 80px -50px rgba(26,22,19,.35); }
+.form-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 28px; margin-bottom: 28px; border-bottom: 1px solid var(--line); }
+.form-heading h2 { font-size: 40px; line-height: 1; margin-top: 8px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-full { grid-column: 1 / -1; }
+.form-grid input:focus, .form-grid textarea:focus, .form-grid select:focus { border-color: var(--red); box-shadow: 0 0 0 4px var(--red-mist); transform: translateY(-1px); }
+.consent { display: flex; gap: 11px; align-items: flex-start; padding: 14px 16px; background: var(--cream-2); border-radius: 14px; color: var(--ink-3); font-size: 12px; line-height: 1.5; cursor: pointer; }
+.consent input { margin-top: 3px; accent-color: var(--red-deep); }
+.form-footer { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line); }
+.form-footer p { max-width: 420px; color: var(--ink-4); font-size: 12px; }
+.form-footer .btn:disabled { opacity: .45; cursor: not-allowed !important; transform: none !important; box-shadow: none !important; }
+.recruitment-success, .recruitment-closed { max-width: 800px; padding: 70px 0; }
+.recruitment-success p, .recruitment-closed p { max-width: 570px; color: var(--ink-3); font-size: 16px; line-height: 1.7; }
+.success-mark { width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; background: var(--red-mist); color: var(--red-deep); margin-bottom: 24px; }
+@media (max-width: 900px) {
+  .recruitment-layout { grid-template-columns: 1fr; gap: 20px; }
+  .recruitment-side { position: static; padding: 10px 0 30px; }
+  .recruitment-title { font-size: clamp(52px, 14vw, 86px); }
+}
+@media (max-width: 640px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .form-full { grid-column: auto; }
+  .form-footer { flex-direction: column; align-items: stretch; }
+  .form-footer .btn { justify-content: center; }
+  .form-heading h2 { font-size: 32px; }
+}
 
-.pro-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 26px;
-  height: 26px;
+/* ============================================================
+   GLOBAL ISTE INTERACTION SYSTEM
+   ============================================================ */
+
+a,
+button,
+.btn,
+.card,
+.interactive-card,
+img,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Buttons + links */
+a,
+button,
+.btn {
+  transition:
+    transform .35s cubic-bezier(.16,1,.3,1),
+    color .3s ease,
+    background-color .3s ease,
+    border-color .3s ease,
+    box-shadow .35s ease;
+}
+
+a:hover,
+button:hover,
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+a:active,
+button:active,
+.btn:active {
+  transform: translateY(1px) scale(.97);
+}
+
+/* Cards */
+.card,
+.interactive-card {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.card:hover,
+.interactive-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Images inside interactive areas */
+.card img,
+.interactive-card img,
+.interactive-media img {
+  transition:
+    transform .7s cubic-bezier(.16,1,.3,1),
+    filter .5s ease;
+}
+
+.card:hover img,
+.interactive-card:hover img,
+.interactive-media:hover img {
+  transform: scale(1.045);
+}
+
+/* Image wrapper */
+.interactive-media {
+  overflow: hidden;
+  position: relative;
+}
+
+.interactive-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(232,117,107,.10),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity .5s ease;
   pointer-events: none;
-  z-index: 9999;
-  transform: translate3d(0,0,0) translate(-50%, -50%);
+}
+
+.interactive-media:hover::after {
+  opacity: 1;
+}
+
+/* Generic interactive surface */
+.interactive-surface {
+  position: relative;
+  overflow: hidden;
   transition:
-    width 0.22s cubic-bezier(0.16,1,0.3,1),
-    height 0.22s cubic-bezier(0.16,1,0.3,1),
-    opacity 0.2s ease;
+    transform .45s cubic-bezier(.16,1,.3,1),
+    border-color .35s ease,
+    box-shadow .45s ease;
 }
 
-.cursor-corner {
+.interactive-surface::before {
+  content: "";
   position: absolute;
-  width: 7px;
-  height: 7px;
-  border-color: var(--red-deep);
-  border-style: solid;
-  border-width: 0;
+  inset: 0;
+  background: var(--red-mist);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .5s cubic-bezier(.16,1,.3,1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.interactive-surface:hover {
+  transform: translateY(-6px);
+  border-color: var(--red-soft);
+  box-shadow: 0 24px 55px rgba(26,22,19,.10);
+}
+
+.interactive-surface:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Text links */
+.link-underline {
   transition:
-    width 0.22s cubic-bezier(0.16,1,0.3,1),
-    height 0.22s cubic-bezier(0.16,1,0.3,1),
-    border-color 0.22s ease;
+    color .3s ease,
+    transform .3s ease;
 }
 
-.cursor-corner.tl {
-  top: 0;
-  left: 0;
-  border-top-width: 1.5px;
-  border-left-width: 1.5px;
+.link-underline:hover {
+  color: var(--red-deep) !important;
 }
 
-.cursor-corner.tr {
-  top: 0;
-  right: 0;
-  border-top-width: 1.5px;
-  border-right-width: 1.5px;
+/* Eyebrows / labels */
+.eyebrow,
+.font-mono {
+  transition: color .3s ease;
 }
 
-.cursor-corner.bl {
-  bottom: 0;
-  left: 0;
-  border-bottom-width: 1.5px;
-  border-left-width: 1.5px;
+/* Tags / pills */
+.badge,
+.tag,
+.pill {
+  transition:
+    transform .3s cubic-bezier(.16,1,.3,1),
+    background-color .3s ease,
+    border-color .3s ease;
 }
 
-.cursor-corner.br {
-  bottom: 0;
-  right: 0;
-  border-bottom-width: 1.5px;
-  border-right-width: 1.5px;
+.badge:hover,
+.tag:hover,
+.pill:hover {
+  transform: translateY(-2px) scale(1.03);
 }
 
-.cursor-center {
+/* Navbar items */
+nav a {
+  position: relative;
+}
+
+nav a::after {
+  content: "";
   position: absolute;
-  width: 3px;
-  height: 3px;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
   background: var(--red);
+  transform: translateX(-50%);
+  transition: width .35s cubic-bezier(.16,1,.3,1);
+}
+
+nav a:hover::after,
+nav a[aria-current="page"]::after {
+  width: 70%;
+}
+
+/* Section headings */
+h1,
+h2,
+h3 {
   transition:
-    transform 0.22s cubic-bezier(0.16,1,0.3,1),
-    background 0.22s ease;
+    color .35s ease,
+    transform .35s cubic-bezier(.16,1,.3,1);
 }
 
-.pro-cursor.is-hover {
-  width: 34px;
-  height: 34px;
+h1:hover,
+h2:hover,
+h3:hover {
+  color: var(--red-deep);
 }
 
-.pro-cursor.is-hover .cursor-corner {
-  width: 9px;
-  height: 9px;
-  border-color: var(--ink);
-}
-
-.pro-cursor.is-hover .cursor-center {
-  transform: translate(-50%, -50%) scale(0.65);
-  background: var(--red-deep);
-}
-
-.pro-cursor.is-click {
-  width: 20px;
-  height: 20px;
-}
-
-.pro-cursor.is-click .cursor-center {
-  transform: translate(-50%, -50%) scale(1.5);
-}
-
-
-/* =========================================================
-   REFINED IMPORTANT-TEXT HOVER
-   ========================================================= */
-
-.magic-text,
-.pro-hover {
-  position: relative;
-  display: inline-block;
+/* Footer team access */
+.footer-team-access {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(250,246,239,.28);
   transition:
-    color 0.28s ease,
-    transform 0.28s cubic-bezier(0.16,1,0.3,1),
-    letter-spacing 0.28s ease;
+    color .3s ease,
+    transform .3s ease;
 }
 
-.magic-text::after,
-.pro-hover::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.04em;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.32s cubic-bezier(0.16,1,0.3,1);
+.footer-team-access:hover {
+  color: var(--red-soft);
+  transform: translateY(-1px);
 }
 
-.magic-text:hover,
-.pro-hover:hover {
-  color: var(--red-deep) !important;
-  transform: translateY(-2px);
-  letter-spacing: -0.01em;
-  text-shadow: none;
+/* Better focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
 }
 
-.magic-text:hover::after,
-.pro-hover:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+/* Don't animate while admin editing */
+body[data-admin="true"] .interactive-surface:hover {
+  transform: none;
 }
 
-.magic-text:active,
-.pro-hover:active {
-  transform: translateY(0) scale(0.97);
-}
-
-
-/* Better interactive cards */
-.interactive-card {
-  transition:
-    transform 0.4s cubic-bezier(0.16,1,0.3,1),
-    box-shadow 0.4s ease,
-    border-color 0.3s ease;
-}
-
-.interactive-card:active {
-  transform: translateY(-5px) scale(0.985);
-}
-
-
-/* Buttons get a clean press interaction */
-.btn:active {
-  transform: translateY(-1px) scale(0.97) !important;
-}
-
-
-/* Desktop only custom cursor */
+/* Mobile */
 @media (max-width: 900px) {
-  .pro-cursor {
+  a:hover,
+  button:hover,
+  .btn:hover,
+  .card:hover,
+  .interactive-card:hover {
+    transform: none;
+  }
+
+  nav a::after {
     display: none;
   }
 }
 
-/* ============================================================
-   MINIMAL PREMIUM CURSOR
-   ============================================================ */
-
-.cursor-dot {
+/* Minimal professional cursor */
+.cursor {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 7px;
   height: 7px;
+  background: var(--red);
   border-radius: 50%;
-  background: var(--red-deep);
   pointer-events: none;
   z-index: 99999;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 3px rgba(196,84,74,0.08);
-  transition:
-    width 180ms cubic-bezier(0.16,1,0.3,1),
-    height 180ms cubic-bezier(0.16,1,0.3,1),
-    box-shadow 180ms ease,
-    background 180ms ease;
-}
-
-body:has(a:hover) .cursor-dot,
-body:has(button:hover) .cursor-dot,
-body:has(.hoverable:hover) .cursor-dot {
-  width: 9px;
-  height: 9px;
-  background: var(--ink);
-  box-shadow: 0 0 0 4px rgba(26,22,19,0.06);
+  box-shadow: 0 0 0 3px rgba(232,117,107,.10);
+  transition: width .2s ease, height .2s ease;
 }
 
 @media (max-width: 900px) {
-  .cursor-dot {
+  body {
+    cursor: auto !important;
+  }
+
+  .cursor {
     display: none;
   }
-}
-
-
-/* ============================================================
-   PREMIUM TEXT HOVER
-   ============================================================ */
-
-.magic-text {
-  position: relative;
-  display: inline-block;
-  transition:
-    color 280ms cubic-bezier(0.16,1,0.3,1),
-    transform 280ms cubic-bezier(0.16,1,0.3,1);
-}
-
-.magic-text::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0.04em;
-  width: 100%;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition:
-    transform 420ms cubic-bezier(0.16,1,0.3,1);
-}
-
-.magic-text:hover {
-  color: var(--red-deep) !important;
-  transform: translateY(-2px);
-}
-
-.magic-text:hover::after {
-  transform: scaleX(1);
-  transform-origin: left center;
-}
-
-
-/* ============================================================
-   PREMIUM LINK HOVER
-   ============================================================ */
-
-.link-underline {
-  position: relative;
-}
-
-.link-underline::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 360ms cubic-bezier(0.16,1,0.3,1);
-}
-
-.link-underline:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-
-/* ============================================================
-   PREMIUM BUTTON MOTION
-   ============================================================ */
-
-.btn {
-  will-change: transform;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-.btn:active {
-  transform: translateY(-1px) scale(0.98);
-}
-
-
-/* ============================================================
-   PREMIUM CARD MOTION
-   ============================================================ */
-
-.card,
-.interactive-card {
-  will-change: transform;
-}
-
-.card:hover {
-  transform: translateY(-7px);
-}
-
-.interactive-card:hover {
-  transform: translateY(-8px);
-}
-
-
-/* ============================================================
-   IMAGE HOVER — SUBTLE, NOT FLASHY
-   ============================================================ */
-
-img.hoverable,
-.hoverable img {
-  transition:
-    transform 600ms cubic-bezier(0.16,1,0.3,1),
-    filter 600ms ease;
-}
-
-a:hover img.hoverable,
-.hoverable:hover img {
-  transform: scale(1.025);
-}
-
-
-/* ============================================================
-   RED DOT PULSE
-   ============================================================ */
-
-@keyframes professionalPulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: scale(0.72);
-    opacity: 0.72;
-  }
-}
-
-
-/* ============================================================
-   MINIMAL PREMIUM CURSOR
-   ============================================================ */
-
-.cursor-dot {
-  position: fixed;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--red-deep);
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 3px rgba(196,84,74,0.08);
-  transition:
-    width 180ms cubic-bezier(0.16,1,0.3,1),
-    height 180ms cubic-bezier(0.16,1,0.3,1),
-    box-shadow 180ms ease,
-    background 180ms ease;
-}
-
-body:has(a:hover) .cursor-dot,
-body:has(button:hover) .cursor-dot,
-body:has(.hoverable:hover) .cursor-dot {
-  width: 9px;
-  height: 9px;
-  background: var(--ink);
-  box-shadow: 0 0 0 4px rgba(26,22,19,0.06);
-}
-
-@media (max-width: 900px) {
-  .cursor-dot {
-    display: none;
-  }
-}
-
-
-/* ============================================================
-   PREMIUM TEXT HOVER
-   ============================================================ */
-
-.magic-text {
-  position: relative;
-  display: inline-block;
-  transition:
-    color 280ms cubic-bezier(0.16,1,0.3,1),
-    transform 280ms cubic-bezier(0.16,1,0.3,1);
-}
-
-.magic-text::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0.04em;
-  width: 100%;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition:
-    transform 420ms cubic-bezier(0.16,1,0.3,1);
-}
-
-.magic-text:hover {
-  color: var(--red-deep) !important;
-  transform: translateY(-2px);
-}
-
-.magic-text:hover::after {
-  transform: scaleX(1);
-  transform-origin: left center;
-}
-
-
-/* ============================================================
-   PREMIUM LINK HOVER
-   ============================================================ */
-
-.link-underline {
-  position: relative;
-}
-
-.link-underline::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 360ms cubic-bezier(0.16,1,0.3,1);
-}
-
-.link-underline:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-
-/* ============================================================
-   PREMIUM BUTTON MOTION
-   ============================================================ */
-
-.btn {
-  will-change: transform;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-.btn:active {
-  transform: translateY(-1px) scale(0.98);
-}
-
-
-/* ============================================================
-   PREMIUM CARD MOTION
-   ============================================================ */
-
-.card,
-.interactive-card {
-  will-change: transform;
-}
-
-.card:hover {
-  transform: translateY(-7px);
-}
-
-.interactive-card:hover {
-  transform: translateY(-8px);
-}
-
-
-/* ============================================================
-   IMAGE HOVER — SUBTLE, NOT FLASHY
-   ============================================================ */
-
-img.hoverable,
-.hoverable img {
-  transition:
-    transform 600ms cubic-bezier(0.16,1,0.3,1),
-    filter 600ms ease;
-}
-
-a:hover img.hoverable,
-.hoverable:hover img {
-  transform: scale(1.025);
-}
-
-
-/* ============================================================
-   RED DOT PULSE
-   ============================================================ */
-
-@keyframes professionalPulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: scale(0.72);
-    opacity: 0.72;
-  }
-}
-
-
-/* Safe separator dot - avoids Unicode encoding issues */
-.text-dot {
-  display: inline-block;
-  width: 4px;
-  height: 4px;
-  margin: 0 10px;
-  border-radius: 50%;
-  background: var(--red-deep);
-  vertical-align: middle;
-  position: relative;
-  top: -1px;
 }
