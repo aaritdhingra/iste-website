@@ -75,8 +75,7 @@ body[data-admin="true"] input, body[data-admin="true"] textarea { cursor: text !
 .marquee-wrapper { display: flex; width: max-content; animation: marquee 30s linear infinite; }
 .marquee-wrapper:hover { animation-play-state: paused; }
 
-.magic-text { display: inline-block; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-.magic-text:hover { color: var(--red-deep); transform: scale(1.05) rotate(-2deg); text-shadow: 3px 3px 0px var(--red-mist); font-style: italic; cursor: pointer; }
+
 
 .hide-mobile { display: block; }
 .show-mobile { display: none; }
@@ -262,3 +261,343 @@ body[data-admin="true"] input, body[data-admin="true"] textarea { cursor: text !
     display: none;
   }
 }
+
+/* ============================================================
+   MINIMAL PREMIUM CURSOR
+   ============================================================ */
+
+.cursor-dot {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red-deep);
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 3px rgba(196,84,74,0.08);
+  transition:
+    width 180ms cubic-bezier(0.16,1,0.3,1),
+    height 180ms cubic-bezier(0.16,1,0.3,1),
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+body:has(a:hover) .cursor-dot,
+body:has(button:hover) .cursor-dot,
+body:has(.hoverable:hover) .cursor-dot {
+  width: 9px;
+  height: 9px;
+  background: var(--ink);
+  box-shadow: 0 0 0 4px rgba(26,22,19,0.06);
+}
+
+@media (max-width: 900px) {
+  .cursor-dot {
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   PREMIUM TEXT HOVER
+   ============================================================ */
+
+.magic-text {
+  position: relative;
+  display: inline-block;
+  transition:
+    color 280ms cubic-bezier(0.16,1,0.3,1),
+    transform 280ms cubic-bezier(0.16,1,0.3,1);
+}
+
+.magic-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.04em;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition:
+    transform 420ms cubic-bezier(0.16,1,0.3,1);
+}
+
+.magic-text:hover {
+  color: var(--red-deep) !important;
+  transform: translateY(-2px);
+}
+
+.magic-text:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+
+/* ============================================================
+   PREMIUM LINK HOVER
+   ============================================================ */
+
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 360ms cubic-bezier(0.16,1,0.3,1);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+/* ============================================================
+   PREMIUM BUTTON MOTION
+   ============================================================ */
+
+.btn {
+  will-change: transform;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+
+/* ============================================================
+   PREMIUM CARD MOTION
+   ============================================================ */
+
+.card,
+.interactive-card {
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+}
+
+.interactive-card:hover {
+  transform: translateY(-8px);
+}
+
+
+/* ============================================================
+   IMAGE HOVER — SUBTLE, NOT FLASHY
+   ============================================================ */
+
+img.hoverable,
+.hoverable img {
+  transition:
+    transform 600ms cubic-bezier(0.16,1,0.3,1),
+    filter 600ms ease;
+}
+
+a:hover img.hoverable,
+.hoverable:hover img {
+  transform: scale(1.025);
+}
+
+
+/* ============================================================
+   RED DOT PULSE
+   ============================================================ */
+
+@keyframes professionalPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.72);
+    opacity: 0.72;
+  }
+}
+
+
+/* ============================================================
+   MINIMAL PREMIUM CURSOR
+   ============================================================ */
+
+.cursor-dot {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red-deep);
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 3px rgba(196,84,74,0.08);
+  transition:
+    width 180ms cubic-bezier(0.16,1,0.3,1),
+    height 180ms cubic-bezier(0.16,1,0.3,1),
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+body:has(a:hover) .cursor-dot,
+body:has(button:hover) .cursor-dot,
+body:has(.hoverable:hover) .cursor-dot {
+  width: 9px;
+  height: 9px;
+  background: var(--ink);
+  box-shadow: 0 0 0 4px rgba(26,22,19,0.06);
+}
+
+@media (max-width: 900px) {
+  .cursor-dot {
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   PREMIUM TEXT HOVER
+   ============================================================ */
+
+.magic-text {
+  position: relative;
+  display: inline-block;
+  transition:
+    color 280ms cubic-bezier(0.16,1,0.3,1),
+    transform 280ms cubic-bezier(0.16,1,0.3,1);
+}
+
+.magic-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.04em;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition:
+    transform 420ms cubic-bezier(0.16,1,0.3,1);
+}
+
+.magic-text:hover {
+  color: var(--red-deep) !important;
+  transform: translateY(-2px);
+}
+
+.magic-text:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+
+/* ============================================================
+   PREMIUM LINK HOVER
+   ============================================================ */
+
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 360ms cubic-bezier(0.16,1,0.3,1);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+/* ============================================================
+   PREMIUM BUTTON MOTION
+   ============================================================ */
+
+.btn {
+  will-change: transform;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+
+/* ============================================================
+   PREMIUM CARD MOTION
+   ============================================================ */
+
+.card,
+.interactive-card {
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+}
+
+.interactive-card:hover {
+  transform: translateY(-8px);
+}
+
+
+/* ============================================================
+   IMAGE HOVER — SUBTLE, NOT FLASHY
+   ============================================================ */
+
+img.hoverable,
+.hoverable img {
+  transition:
+    transform 600ms cubic-bezier(0.16,1,0.3,1),
+    filter 600ms ease;
+}
+
+a:hover img.hoverable,
+.hoverable:hover img {
+  transform: scale(1.025);
+}
+
+
+/* ============================================================
+   RED DOT PULSE
+   ============================================================ */
+
+@keyframes professionalPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.72);
+    opacity: 0.72;
+  }
+}
+

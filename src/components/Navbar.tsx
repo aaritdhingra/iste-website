@@ -50,8 +50,7 @@ export default function Navbar() {
               <div style={{ position: "absolute", inset: -6, background: "var(--red)", borderRadius: 999, opacity: 0.15, filter: "blur(12px)" }} />
               <img src={content.logo} alt="ISTE" style={{ width: 78, height: 78, borderRadius: 999, objectFit: "cover", border: "3px solid var(--ink)", position: "relative", boxShadow: "0 8px 24px -8px rgba(26,22,19,0.25)" }} />
             </div>
-            <div>
-              <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginBottom: 2 }}>
+            <div><div style={{ marginBottom: 2 }}>
                 <div className="font-serif" style={{ fontSize: 34, fontWeight: 600, letterSpacing: "-0.02em", color: "var(--ink)", lineHeight: 1 }}>ISTE</div>
               </div>
               <div style={{ fontSize: 13, color: "var(--ink-2)", fontWeight: 500 }}>
@@ -104,3 +103,5 @@ export default function Navbar() {
     </>
   );
 }
+
+

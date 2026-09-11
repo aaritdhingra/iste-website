@@ -204,7 +204,7 @@ export default function Home() {
                   </svg>
                 </div>
 
-                {/* 2. Main Photo - AAGE AAYA (zIndex: 2) */}
+                {/* Main Photo */}
                 <div
                   style={{
                     position: "absolute",
@@ -453,4 +453,8 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+
 
