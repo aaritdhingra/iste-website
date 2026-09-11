@@ -1,0 +1,18 @@
+import type { SVGProps } from "react";
+const b = { fill: "none", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, viewBox: "0 0 24 24" };
+
+export const ArrowRight = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><path d="M5 12h14M13 6l6 6-6 6"/></svg>);
+export const ArrowUpRight = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><path d="M7 17L17 7M7 7h10v10"/></svg>);
+export const ArrowDown = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><path d="M12 5v14M6 13l6 6 6-6"/></svg>);
+export const Close = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><path d="M18 6L6 18M6 6l12 12"/></svg>);
+export const Menu = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><path d="M3 8h18M3 16h18"/></svg>);
+export const Check = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><path d="M5 12l5 5L20 7"/></svg>);
+export const Calendar = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>);
+export const Clock = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>);
+export const Pin = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><path d="M12 21s-7-6.5-7-12a7 7 0 1114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>);
+export const Mail = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>);
+export const Insta = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>);
+export const LinkedIn = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.5M12 17v-4a2 2 0 014 0v4"/></svg>);
+export const Spark = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6z"/></svg>);
+export const Award = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"/></svg>);
+export const Users = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-7 7-7s7 3 7 7M16 3.5a4 4 0 010 8M22 21c0-3-2-5-4-6"/></svg>);
