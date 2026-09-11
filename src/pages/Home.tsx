@@ -72,7 +72,7 @@ export default function Home() {
                 <TextReveal text="Build, lead, and innovate" delay={80} />
                 <br className="hide-mobile" />
                 <TextReveal text=" with the " delay={200} />
-                <span className="magic-text" style={{ fontStyle: "italic", color: "var(--red-deep)" }}>
+                <span className="magic-text pro-hover" style={{ fontStyle: "italic", color: "var(--red-deep)" }}>
                   ISTE Student Chapter
                 </span>
                 <span style={{ color: "var(--red)" }}>.</span>
@@ -355,7 +355,7 @@ export default function Home() {
             <div className="eyebrow" style={{ marginBottom: 24 }}>Chapter Overview</div>
             <h2 className="h-display" style={{ fontSize: "clamp(40px, 6vw, 88px)", marginBottom: 64, maxWidth: 1000, lineHeight: 1.08 }}>
               A community built to{" "}
-              <span className="magic-text" style={{ fontStyle: "italic", color: "var(--red-deep)" }}>
+              <span className="magic-text pro-hover" style={{ fontStyle: "italic", color: "var(--red-deep)" }}>
                 inspire
               </span>{" "}
               and redefine engineering.
@@ -423,7 +423,7 @@ export default function Home() {
           <Reveal>
             <div className="eyebrow" style={{ marginBottom: 24, justifyContent: "center", display: "inline-flex" }}>Join the movement</div>
             <h2 className="h-display" style={{ fontSize: "clamp(40px, 7vw, 96px)", marginBottom: 28 }}>
-              Ready to <span className="magic-text" style={{ fontStyle: "italic", color: "var(--red-deep)" }}>build?</span>
+              Ready to <span className="magic-text pro-hover" style={{ fontStyle: "italic", color: "var(--red-deep)" }}>build?</span>
             </h2>
             <p style={{ fontSize: 17, color: "var(--ink-2)", maxWidth: 520, margin: "0 auto 36px", lineHeight: 1.6 }}>
               Become part of a community shaping the future of technology at {content.site.university}.
@@ -453,3 +453,4 @@ export default function Home() {
     </div>
   );
 }
+

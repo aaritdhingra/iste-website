@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, Close, ArrowUpRight } from "./Icons";
 import { useContent } from "../store/ContentStore";
@@ -31,13 +31,13 @@ export default function Navbar() {
         <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
           <div className="font-mono" style={{ fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", display: "flex", alignItems: "center", gap: 10 }}>
             <span style={{ width: 6, height: 6, borderRadius: 999, background: "var(--red)", animation: "pulse 2s infinite" }} />
-            Official portal · ISTE Student Chapter
+            Official portal Â· ISTE Student Chapter
           </div>
           <div style={{ display: "flex", gap: 20, alignItems: "center" }} className="hide-mobile">
             <a href={`mailto:${content.site.email}`} className="hoverable link-underline" style={{ opacity: 0.85 }}>Email</a>
-            <span style={{ opacity: 0.3 }}>·</span>
+            <span style={{ opacity: 0.3 }}>Â·</span>
             <a href={content.site.instagram} target="_blank" rel="noreferrer" className="hoverable link-underline" style={{ opacity: 0.85 }}>Instagram</a>
-            <span style={{ opacity: 0.3 }}>·</span>
+            <span style={{ opacity: 0.3 }}>Â·</span>
             <a href={content.site.linkedin} target="_blank" rel="noreferrer" className="hoverable link-underline" style={{ opacity: 0.85 }}>LinkedIn</a>
           </div>
         </div>
@@ -53,7 +53,6 @@ export default function Navbar() {
             <div>
               <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginBottom: 2 }}>
                 <div className="font-serif" style={{ fontSize: 34, fontWeight: 600, letterSpacing: "-0.02em", color: "var(--ink)", lineHeight: 1 }}>ISTE</div>
-                <div style={{ padding: "3px 10px", background: "var(--red)", color: "var(--cream)", fontSize: 9, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase", borderRadius: 999, fontFamily: "JetBrains Mono, monospace" }}>Est. Chapter</div>
               </div>
               <div style={{ fontSize: 13, color: "var(--ink-2)", fontWeight: 500 }}>
                 <span style={{ color: "var(--red-deep)", fontWeight: 700 }}>Chandigarh</span> University

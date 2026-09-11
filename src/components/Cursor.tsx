@@ -1,54 +1,71 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function Cursor() {
-  const dotRef = useRef<HTMLDivElement>(null);
-  const ringRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
   const loc = useLocation();
   const [enabled, setEnabled] = useState(true);
 
   useEffect(() => {
-    // Disable on admin route
     const isAdmin = loc.pathname.startsWith("/admin");
     setEnabled(!isAdmin);
     document.body.style.cursor = isAdmin ? "auto" : "none";
-    return () => { document.body.style.cursor = "auto"; };
+
+    return () => {
+      document.body.style.cursor = "auto";
+    };
   }, [loc.pathname]);
 
   useEffect(() => {
     if (!enabled) return;
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    let raf = 0;
+
     const move = (e: MouseEvent) => {
-      mx = e.clientX; my = e.clientY;
-      if (dotRef.current) dotRef.current.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+      if (cursorRef.current) {
+        cursorRef.current.style.transform =
+          `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+      }
+
+      const target = e.target as HTMLElement;
+
+      if (
+        target.closest(
+          "a, button, .hoverable, input, textarea, select, .magic-text, .pro-hover"
+        )
+      ) {
+        cursorRef.current?.classList.add("is-hover");
+      } else {
+        cursorRef.current?.classList.remove("is-hover");
+      }
     };
-    const loop = () => {
-      rx += (mx - rx) * 0.15;
-      ry += (my - ry) * 0.15;
-      if (ringRef.current) ringRef.current.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-      raf = requestAnimationFrame(loop);
+
+    const down = () => {
+      cursorRef.current?.classList.add("is-click");
     };
-    const over = (e: MouseEvent) => {
-      const t = e.target as HTMLElement;
-      if (t.closest("a, button, .hoverable, input, textarea, select")) ringRef.current?.classList.add("hover");
-      else ringRef.current?.classList.remove("hover");
+
+    const up = () => {
+      cursorRef.current?.classList.remove("is-click");
     };
+
     window.addEventListener("mousemove", move);
-    window.addEventListener("mouseover", over);
-    loop();
+    window.addEventListener("mousedown", down);
+    window.addEventListener("mouseup", up);
+
     return () => {
       window.removeEventListener("mousemove", move);
-      window.removeEventListener("mouseover", over);
-      cancelAnimationFrame(raf);
+      window.removeEventListener("mousedown", down);
+      window.removeEventListener("mouseup", up);
     };
   }, [enabled]);
 
   if (!enabled) return null;
+
   return (
-    <>
-      <div ref={dotRef} className="cursor" />
-      <div ref={ringRef} className="cursor-ring" />
-    </>
+    <div ref={cursorRef} className="pro-cursor" aria-hidden="true">
+      <span className="cursor-corner tl" />
+      <span className="cursor-corner tr" />
+      <span className="cursor-corner bl" />
+      <span className="cursor-corner br" />
+      <span className="cursor-center" />
+    </div>
   );
 }

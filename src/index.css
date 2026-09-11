@@ -1,4 +1,4 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+﻿*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --cream: #FAF6EF; --cream-2: #F3EDE0; --cream-3: #ECE3D0;
   --ink: #1A1613; --ink-2: #3D342D; --ink-3: #6B5D52; --ink-4: #A89A8C;
@@ -23,9 +23,7 @@ body[data-admin="true"], body[data-admin="true"] * { cursor: auto !important; }
 body[data-admin="true"] a, body[data-admin="true"] button, body[data-admin="true"] [role="button"] { cursor: pointer !important; }
 body[data-admin="true"] input, body[data-admin="true"] textarea { cursor: text !important; }
 
-.cursor { position: fixed; top: 0; left: 0; width: 10px; height: 10px; background: var(--red); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s; box-shadow: 0 0 10px rgba(232,117,107,0.5); }
-.cursor-ring { position: fixed; top: 0; left: 0; width: 44px; height: 44px; border: 1.5px solid var(--red-soft); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: transform 0.1s ease-out, width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, background 0.3s; }
-.cursor-ring.hover { width: 80px; height: 80px; border-color: transparent; background: rgba(232,117,107,0.15); backdrop-filter: blur(2px); }
+
 
 @media (max-width: 900px) { body { cursor: auto; font-size: 16px; } html { font-size: 16px; } button, a { cursor: pointer; } .cursor, .cursor-ring { display: none; } }
 
@@ -90,4 +88,177 @@ body[data-admin="true"] input, body[data-admin="true"] textarea { cursor: text !
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+/* =========================================================
+   PROFESSIONAL CUSTOM CURSOR
+   ========================================================= */
+
+.pro-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(0,0,0) translate(-50%, -50%);
+  transition:
+    width 0.22s cubic-bezier(0.16,1,0.3,1),
+    height 0.22s cubic-bezier(0.16,1,0.3,1),
+    opacity 0.2s ease;
+}
+
+.cursor-corner {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-color: var(--red-deep);
+  border-style: solid;
+  border-width: 0;
+  transition:
+    width 0.22s cubic-bezier(0.16,1,0.3,1),
+    height 0.22s cubic-bezier(0.16,1,0.3,1),
+    border-color 0.22s ease;
+}
+
+.cursor-corner.tl {
+  top: 0;
+  left: 0;
+  border-top-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.cursor-corner.tr {
+  top: 0;
+  right: 0;
+  border-top-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+.cursor-corner.bl {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.cursor-corner.br {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+.cursor-center {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--red);
+  transition:
+    transform 0.22s cubic-bezier(0.16,1,0.3,1),
+    background 0.22s ease;
+}
+
+.pro-cursor.is-hover {
+  width: 34px;
+  height: 34px;
+}
+
+.pro-cursor.is-hover .cursor-corner {
+  width: 9px;
+  height: 9px;
+  border-color: var(--ink);
+}
+
+.pro-cursor.is-hover .cursor-center {
+  transform: translate(-50%, -50%) scale(0.65);
+  background: var(--red-deep);
+}
+
+.pro-cursor.is-click {
+  width: 20px;
+  height: 20px;
+}
+
+.pro-cursor.is-click .cursor-center {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+
+/* =========================================================
+   REFINED IMPORTANT-TEXT HOVER
+   ========================================================= */
+
+.magic-text,
+.pro-hover {
+  position: relative;
+  display: inline-block;
+  transition:
+    color 0.28s ease,
+    transform 0.28s cubic-bezier(0.16,1,0.3,1),
+    letter-spacing 0.28s ease;
+}
+
+.magic-text::after,
+.pro-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.04em;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.32s cubic-bezier(0.16,1,0.3,1);
+}
+
+.magic-text:hover,
+.pro-hover:hover {
+  color: var(--red-deep) !important;
+  transform: translateY(-2px);
+  letter-spacing: -0.01em;
+  text-shadow: none;
+}
+
+.magic-text:hover::after,
+.pro-hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.magic-text:active,
+.pro-hover:active {
+  transform: translateY(0) scale(0.97);
+}
+
+
+/* Better interactive cards */
+.interactive-card {
+  transition:
+    transform 0.4s cubic-bezier(0.16,1,0.3,1),
+    box-shadow 0.4s ease,
+    border-color 0.3s ease;
+}
+
+.interactive-card:active {
+  transform: translateY(-5px) scale(0.985);
+}
+
+
+/* Buttons get a clean press interaction */
+.btn:active {
+  transform: translateY(-1px) scale(0.97) !important;
+}
+
+
+/* Desktop only custom cursor */
+@media (max-width: 900px) {
+  .pro-cursor {
+    display: none;
+  }
 }
