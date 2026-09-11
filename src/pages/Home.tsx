@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { useEffect, useRef, useState, useMemo } from "react";
 import { ArrowUpRight, ArrowDown, Spark, Users, Calendar } from "../components/Icons";
 import Reveal, { Magnetic, TiltCard, TextReveal } from "../components/Reveal";
@@ -143,7 +143,7 @@ export default function Home() {
               </Reveal>
             </div>
 
-            {/* RIGHT — LAYERED BENTO (Spinning Ring PEECHe) */}
+            {/* RIGHT â€” LAYERED BENTO (Spinning Ring PEECHe) */}
             <Reveal delay={280}>
               <div 
                 className="hero-right-container" 
@@ -181,7 +181,7 @@ export default function Home() {
                     width: "38%",
                     minWidth: 120,
                     aspectRatio: "1/1",
-                    zIndex: 1, // ← PEECHE GAYA
+                    zIndex: 1, // â† PEECHE GAYA
                     animation: "spin 20s linear infinite",
                     pointerEvents: "none",
                   }}
@@ -198,7 +198,7 @@ export default function Home() {
                       fontFamily="JetBrains Mono, monospace"
                     >
                       <textPath href="#ring" startOffset="0%">
-                        ISTE · CUSC · ISTE · CUSC ·
+                        ISTE Â· CUSC Â· ISTE Â· CUSC Â·
                       </textPath>
                     </text>
                   </svg>
@@ -216,7 +216,7 @@ export default function Home() {
                     overflow: "hidden",
                     border: "3px solid var(--cream)",
                     boxShadow: "0 28px 56px -20px rgba(0,0,0,0.25)",
-                    zIndex: 2, // ← AAGE AAYA
+                    zIndex: 2, // â† AAGE AAYA
                   }}
                 >
                   <EditableImage
@@ -301,7 +301,7 @@ export default function Home() {
                 paddingTop: 28,
                 borderTop: "1px solid var(--line)",
                 display: "flex",
-                justify: "space-between",
+                justifyContent: 'space-between',
                 alignItems: "center",
                 flexWrap: "wrap",
                 gap: 16,
@@ -309,7 +309,7 @@ export default function Home() {
             >
               <div className="font-mono" style={{ fontSize: 11, color: "var(--ink-3)", letterSpacing: "0.15em", textTransform: "uppercase", display: "flex", alignItems: "center", gap: 10, fontWeight: 600 }}>
                 <span style={{ width: 7, height: 7, borderRadius: 999, background: "var(--red)" }} />
-                Official portal · {content.site.university}
+                Official portal Â· {content.site.university}
               </div>
               <div className="font-mono" style={{ fontSize: 11, color: "var(--ink-3)", letterSpacing: "0.15em", textTransform: "uppercase", display: "flex", alignItems: "center", gap: 8, fontWeight: 600 }}>
                 Scroll <ArrowDown width={13} height={13} />
@@ -388,7 +388,7 @@ export default function Home() {
               <div style={{ display: "flex", flexDirection: "column", gap: 36 }}>
                 <div>
                   <div className="font-mono" style={{ fontSize: 11, color: "var(--red-deep)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 14, fontWeight: 800 }}>
-                    01 · Who We Are
+                    01 Â· Who We Are
                   </div>
                   <EditableText
                     path="site.overview"
@@ -401,7 +401,7 @@ export default function Home() {
                 <div style={{ height: 1, background: "var(--line)" }} />
                 <div>
                   <div className="font-mono" style={{ fontSize: 11, color: "var(--red-deep)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 14, fontWeight: 800 }}>
-                    02 · What We Do
+                    02 Â· What We Do
                   </div>
                   <EditableText
                     path="site.overview2"

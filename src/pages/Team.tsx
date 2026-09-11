@@ -1,6 +1,6 @@
-import Reveal from "../components/Reveal";
+﻿import Reveal from "../components/Reveal";
 import { TEAM } from "../data/siteData";
-import { IconLinkedIn, ArrowUpRight } from "../components/Icons";
+import { LinkedIn, ArrowUpRight } from "../components/Icons";
 
 export default function Team() {
   return (
@@ -46,7 +46,7 @@ export default function Team() {
                         <a href="#" style={{ width: 32, height: 32, borderRadius: 999, background: "var(--cream-2)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--ink-3)", transition: "all 0.3s" }}
                           onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--red)"; (e.currentTarget as HTMLElement).style.color = "var(--cream)"; }}
                           onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--cream-2)"; (e.currentTarget as HTMLElement).style.color = "var(--ink-3)"; }}
-                        ><IconLinkedIn width={14} height={14} /></a>
+                        ><LinkedIn width={14} height={14} /></a>
                       </div>
                       <div className="font-mono" style={{ fontSize: 11, color: "var(--red-deep)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 4 }}>{m.role}</div>
                       <div style={{ fontSize: 12, color: "var(--ink-3)", marginBottom: 12 }}>{m.dept}</div>

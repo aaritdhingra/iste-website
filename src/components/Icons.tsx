@@ -16,3 +16,10 @@ export const LinkedIn = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.wi
 export const Spark = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6z"/></svg>);
 export const Award = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"/></svg>);
 export const Users = (p: SVGProps<SVGSVGElement>) => (<svg {...b} width={p.width??20} height={p.height??20} {...p}><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-7 7-7s7 3 7 7M16 3.5a4 4 0 010 8M22 21c0-3-2-5-4-6"/></svg>);
+/* Compatibility aliases */
+export const IconMail = Mail;
+export const IconPin = Pin;
+export const IconInsta = Insta;
+export const IconLinkedIn = LinkedIn;
+export const IconYouTube = Insta;
+export const IconCode = ArrowRight;

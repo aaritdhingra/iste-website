@@ -1,8 +1,7 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import Reveal from "../components/Reveal";
 import { useContent } from "../store/ContentStore";
-import { EditableImage } from "../components/Editable";
-import { ArrowUpRight, Users, LinkedIn } from "../components/Icons";
+import { Users, LinkedIn } from "../components/Icons";
 
 export default function Members() {
   const { content } = useContent();
@@ -23,7 +22,7 @@ export default function Members() {
           <Reveal delay={200}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, marginTop: 60 }} className="members-intro">
               <p style={{ fontSize: 20, lineHeight: 1.65, color: "var(--ink-2)", maxWidth: 560 }}>
-                Engineers, designers, organizers and mentors — different disciplines united by one conviction: build things that matter.
+                Engineers, designers, organizers and mentors â€” different disciplines united by one conviction: build things that matter.
               </p>
               <div style={{ display: "flex", gap: 30, alignItems: "center", justifyContent: "flex-end" }}>
                 <div>
@@ -54,7 +53,7 @@ export default function Members() {
                   color: filter === c ? "var(--cream)" : "var(--ink-2)",
                   border: `1px solid ${filter === c ? "var(--ink)" : "var(--line)"}`, transition: "all 0.3s",
                 }}>
-                {c} · {c === "All" ? content.members.length : content.members.filter(m => m.category === c).length}
+                {c} Â· {c === "All" ? content.members.length : content.members.filter(m => m.category === c).length}
               </button>
             ))}
           </div>
@@ -141,3 +140,4 @@ export default function Members() {
     </div>
   );
 }
+

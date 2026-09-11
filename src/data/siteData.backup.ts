@@ -1,12 +1,12 @@
-﻿export const SITE = {
+export const SITE = {
   short: "ISTE",
   full: "Indian Society for Technical Education",
   chapter: "Student Chapter",
   university: "Chandigarh University",
   tagline: "Build, lead, and innovate.",
   intro: "A professional student society dedicated to technical excellence, industry exposure, leadership development, and meaningful innovation beyond the classroom.",
-  overview: "We are the Indian Society for Technical Education Student Chapter at Chandigarh University â€” a dynamic, student-driven community built to inspire innovation, creativity, and technological excellence. Backed by the prestigious ISTE network, we aim to create a platform where passionate minds collaborate, innovate, and grow into future leaders of the tech world.",
-  overview2: "From coding challenges and technical workshops to hackathons, research initiatives, and networking opportunities, ISTE is more than just a society â€” it's a hub of ideas, ambition, and endless possibilities. We empower students to explore beyond classrooms, transform concepts into impactful solutions, and become part of a thriving community shaping the future of technology.",
+  overview: "We are the Indian Society for Technical Education Student Chapter at Chandigarh University — a dynamic, student-driven community built to inspire innovation, creativity, and technological excellence. Backed by the prestigious ISTE network, we aim to create a platform where passionate minds collaborate, innovate, and grow into future leaders of the tech world.",
+  overview2: "From coding challenges and technical workshops to hackathons, research initiatives, and networking opportunities, ISTE is more than just a society — it's a hub of ideas, ambition, and endless possibilities. We empower students to explore beyond classrooms, transform concepts into impactful solutions, and become part of a thriving community shaping the future of technology.",
   email: "iste@cumail.in",
   location: "Chandigarh University, Mohali, Punjab",
   instagram: "https://instagram.com/iste.cu",
@@ -65,19 +65,8 @@ export const PAST_EVENTS = [
 ];
 
 export const ACHIEVEMENTS = [
-  {
-    year: "2026",
-    items: [
-      {
-        title: "Best Professional Society Award",
-        desc: "Presented to the Indian Society for Technical Education (ISTE) in recognition of academic excellence, tech innovation, and leadership."
-      },
-      {
-        title: "Change Maker Award",
-        desc: "Recognized for engineering and technology education leadership at Chandigarh University."
-      }
-    ]
-  }
+  { title: "Best Professional Society Award", desc: "Presented to the Indian Society for Technical Education (ISTE) in recognition of academic excellence, tech innovation, and leadership." },
+  { title: "Change Maker Award", desc: "Recognized for engineering and technology education leadership at Chandigarh University." },
 ];
 
 export const NAV = [
@@ -87,57 +76,3 @@ export const NAV = [
   { to: "/past-events", label: "Previous Events" },
   { to: "/recruitment", label: "Recruitment" },
 ];
-export type GalleryItem = {
-  src: string;
-  alt: string;
-  cat: string;
-};
-
-export const GALLERY: GalleryItem[] = [
-  {
-    src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=85",
-    alt: "ISTE Event",
-    cat: "Events",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=85",
-    alt: "Technical Workshop",
-    cat: "Workshops",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=85",
-    alt: "Technology",
-    cat: "Technology",
-  },
-];
-
-export type ProjectItem = {
-  id: string;
-  title: string;
-  type: string;
-  status: string;
-  year: string;
-  desc: string;
-  tech: string[];
-  image: string;
-  problem: string;
-  solution: string;
-  team: string;
-};
-
-export const PROJECTS: ProjectItem[] = [];
-
-export type TeamGroup = {
-  cat: string;
-  people: {
-    name: string;
-    role: string;
-    dept: string;
-    bio: string;
-    image: string;
-  }[];
-};
-
-export const TEAM: TeamGroup[] = [];
-
-

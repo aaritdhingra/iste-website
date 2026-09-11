@@ -1,8 +1,8 @@
-import { useParams, Link } from "react-router-dom";
+﻿import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useContent } from "../store/ContentStore";
 import { RichText } from "../components/RichText";
-import Reveal, { Parallax } from "../components/Reveal";
+import Reveal from "../components/Reveal";
 import { ArrowRight, Calendar } from "../components/Icons";
 
 export default function PastEventDetail() {

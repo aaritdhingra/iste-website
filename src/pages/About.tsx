@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
-import Reveal, { Parallax } from "../components/Reveal";
+﻿import { useState, useEffect } from "react";
+import Reveal from "../components/Reveal";
 import { useContent } from "../store/ContentStore";
 import { EditableText, EditableImage } from "../components/Editable";
-import { ArrowRight, Spark } from "../components/Icons";
 
 export default function About() {
   const [i, setI] = useState(0);
@@ -34,7 +33,7 @@ export default function About() {
                 </div>
               ))}
               <div style={{ position: "absolute", bottom: 40, left: 40, right: 40, color: "var(--cream)", zIndex: 10, pointerEvents: "none" }}>
-                <div className="font-mono" style={{ fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", opacity: 0.85, marginBottom: 12, fontWeight: 700 }}>Innovation · Excellence · Community</div>
+                <div className="font-mono" style={{ fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", opacity: 0.85, marginBottom: 12, fontWeight: 700 }}>Innovation Â· Excellence Â· Community</div>
                 <h2 className="h-display" style={{ fontSize: "clamp(32px, 5vw, 68px)" }}>Building tomorrow, today.</h2>
               </div>
               <div style={{ position: "absolute", bottom: 30, right: 30, display: "flex", gap: 8, zIndex: 11 }}>
